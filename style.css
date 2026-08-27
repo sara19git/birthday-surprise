@@ -118,7 +118,7 @@ h2{
     top: 100%;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: auto;
     padding: 1rem;
     background: #fff;
     z-index: 1;
@@ -136,9 +136,8 @@ h2{
 }
 
 .letter .letter-content {
-    font-family: 'Georgia';
+    font-family: 'Georgia', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
     color: #223;
-    padding-top: 20px;
 }
