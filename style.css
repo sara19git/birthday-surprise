@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Roboto", sans-serif; */
+}
+html,body {
+    background-color: #000;
+    background-image: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWY1c3Fja2VqMTVsOHI5bDgweG40cmFnbWc0MGt1eXo2empzNWo0YyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TxVVB6PfWMjE4/giphy.gif");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.birthday-container{
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    color: rgb(246, 36, 119);
+    font-size: 40px;
+    left: 50%;
+}
+
+.birthday-btn{
+    display: inline-block;
+    /* position: relative; */
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* top: 50%; */
+    /* left: 50%; */
+    padding: 10px 20px;
+    margin: 20px;
+    border: none;
+    border-radius: 14px;
+    /* transition: transform 0.8s ease; */
+}
+
+.birthday-btn:hover {
+    transform: scale(1.25);
+    background-image: linear-gradient(90deg, 
+    rgba(35, 210, 255, 1) 0.01%,
+    rgb(246, 36, 119) 48.8%,
+    rgba(255, 223, 67, 1) 99.9%);
+}
+
+
+.hide {
+    display: none;
+}
+
+.envelope-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 340px;
+    height: 220px;
+    pointer-events: none;
+    z-index: 99;
+    opacity: 0;
+    transition: opacity 1s ease;
+    transform: translate(-50%, -50%);
+}
+
+.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.envelope {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #2196F3;
+    background-image: url("https://i.pinimg.com/736x/88/08/97/880897331fecedb9c1cfbf5a5cd71c74.jpg");
+    border: 2px solid #97DDE9;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    perspective: 800px;
+}
+
+.envelope.open {
+    transform: rotateX(20deg);
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-color: #fff;
+    border-bottom: 2px solid #97DDE9;
+    border-bottom-right-radius: 150px;
+    border-bottom-left-radius: 150px;
+    z-index: 2;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: transform 0.8s ease;
+}
+
+.envelope.open .top  {
+    transform: rotateX(-120deg);
+}
+
+.letter {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background: #fff;
+    z-index: 1;
+}
+
+.letter .letter-content h3{
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+
+}
+
+.envelope.open .letter {
+    top: 0%;
+}
+
+.letter .letter-content {
+    font-family: 'Georgia';
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #223;
+}
